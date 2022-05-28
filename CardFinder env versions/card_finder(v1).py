@@ -13,21 +13,6 @@ RIGHT = 2
 UP = 3
 terminal_output = open(1, 'w')
 
-MAPS = {
-    "4x4": ["SFFF", "FHFH", "FFFH", "HFFG"],
-    "8x8": [
-        "SFFFFFFF",
-        "FFFFFFFF",
-        "FFFHFFFF",
-        "FFFFFHFF",
-        "FFFHFFFF",
-        "FHHFFFHF",
-        "FHFFHFHF",
-        "FFFHFFFG",
-    ],
-}
-
-
 def generate_random_map(size=9, p=0.15):
     """Generuoja atsitiktinį tinkamą žemėlapį
     :param size: kiekvienos žemėlapio kraštinės dydis
@@ -35,7 +20,6 @@ def generate_random_map(size=9, p=0.15):
     """
     valid = False
 
-    # DFS to check that it's a valid path.
     def is_valid(res):
         print("isValid check", file=terminal_output)
         frontier, discovered = [], set()
@@ -68,11 +52,8 @@ def generate_random_map(size=9, p=0.15):
 class CardFinderEnv(discrete.DiscreteEnv):
     metadata = {"render.modes": ["human", "ansi"]}
 
-    def __init__(self, desc=None, map_name="4x4"):
-        if desc is None and map_name is None:
-            desc = generate_random_map()
-        elif desc is None:
-            desc = generate_random_map() #MAPS[map_name]
+    def __init__(self, desc=None):
+        desc = generate_random_map()
         self.desc = desc = np.asarray(desc, dtype="c")
         self.nrow, self.ncol = nrow, ncol = desc.shape
         self.reward_range = (-10, 20)
