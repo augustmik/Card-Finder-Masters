@@ -1,6 +1,6 @@
 # Card-Finder-Masters
 
-Šiame kataloge yra pateikiami Vilnius Tech studento Augusto Mikulėno magistro baigiamasis darbas bei visi jo priedai.
+Šiame kataloge yra pateikiamas Vilnius Tech studento Augusto Mikulėno magistro baigiamasis darbas bei visi jo priedai.
 
 ## Anotacija
 Baigiamajame magistro darbe siūlomas mašininiu mokymusi grindžiamas naudotojo sąsajos projektavimo būdas autizmo spektro sutrikimą turintiems naudotojams, nagrinėjama kokia seka pateikti paveikslėlių apsikeitimo komunikacijos sistemos (angl. Picture exchange communication system) (toliau – PECS) korteles skaitmenizuotose PECS sistemos realizacijose.
